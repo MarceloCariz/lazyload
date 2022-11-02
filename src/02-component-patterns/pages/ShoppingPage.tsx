@@ -1,7 +1,9 @@
 
 
 import React from 'react'
-import { ProductCard } from '../components/ProductCard';
+import { ProductButtons, ProductImage, ProductTitle, ProductCard } from '../components'
+// import { ProductCard } from '../components/ProductCard'
+// import { ProductButtons, ProductCard, ProductImage, ProductTitle } from '../components/ProductCard';
 
 
 const product = {
@@ -17,10 +19,21 @@ export const ShoppingPage = () => {
         <h1>Shopping Page</h1>
         <hr />
         <div style={{display: 'flex', flexDirection: 'row', flexWrap: 'wrap'}}>
-            <ProductCard product={product} />
-            <ProductCard product={product}/>
-            <ProductCard product={product}/>
-            <ProductCard product={product}/>
+        <ProductCard product={product}>
+              <ProductImage />
+              <ProductTitle title='cafeee'/>
+              <ProductButtons />
+          </ProductCard>
+          <ProductCard product={product}>
+              <ProductCard.Image />
+              <ProductCard.Title />
+              <ProductCard.Buttons />
+          </ProductCard>
+          <ProductCard product={product}>
+              <ProductCard.Image />
+              <ProductCard.Title title='cafe2Card.'/>
+              <ProductCard.Buttons />
+          </ProductCard>
         </div>
     </div>
   )
